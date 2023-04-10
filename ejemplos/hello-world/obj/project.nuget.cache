@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "6LPDNzSvdYNQGy/6F0hvy3MMXUGrdvnB7hwew8e6G2UHzHPpDt9agT5AFRWfOvIQNGZRY7M4SUUqfso7/eVypA==",
+  "success": true,
+  "projectFilePath": "/home/pablo/udemy/dotnet/ejemplos/hello-world/hello-world.csproj",
+  "expectedPackageFiles": [
+    "/home/pablo/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.3/microsoft.aspnetcore.app.ref.7.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
