@@ -1,7 +1,7 @@
 Para crear un proyecto:
 
 ```bash
-dotnet new [TEMPLATE] --name="nombre"
+dotnet new [TEMPLATE] --name="nombre" --use-program-main
 ```
 
 [TEMPLATE]:
