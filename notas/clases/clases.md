@@ -190,10 +190,18 @@ La sobrecarga de operadores es la posibilidad de sobrecargar los operadores de u
 ```csharp
 class Clase
 {
-    public static Clase operator +(Clase valor1, Clase valor2) {
+    public static Clase operator + (Clase valor1, Clase valor2) {
         return new Clase();
     }
 }
+```
+
+Un ejemplo de uso del ejemplo anterior:
+
+```csharp
+Clase valor1 = new Clase();
+Clase valor2 = new Clase();
+Clase resultado = valor1 + valor2;
 ```
 
 
