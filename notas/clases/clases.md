@@ -135,6 +135,66 @@ int valor2 = 10;
 int resultado = valor.Sumar(valor2);
 ```
 
+Expression-bodied members
+-----------------------
+
+Un expression-bodied member es un miembro de una clase que tiene una sola expresión.
+
+```csharp
+public class Clase
+{
+    private age;
+    public int Age
+    {
+        get => age;
+        set => age = value > 0 ? value : throw new ArgumentException("Age must be greater than 0");
+    }
+
+    public Student(string name, int age) => (Name, Age) = (name, age);
+
+}
+```
+
+Constructores
+-----------------------
+
+El constructor es un método especial que se ejecuta cuando se crea una instancia de la clase.
+
+```csharp
+class Clase
+{
+    public Clase() { } // Constructor por defecto.
+    public Clase(int valor) { } // Constructor con parámetros.
+}
+```
+
+Deconstructores
+-----------------------
+
+El deconstructor es un método especial que se ejecuta cuando se destruye una instancia de la clase.
+Solo se puede tener un destructor por clase.
+No se puede invocar directamente, se invoca automáticamente cuando se destruye la instancia.
+
+```csharp
+class Clase
+{
+    ~Clase() { } // Destructor.
+}
+```
+
+Sobrecarga de operadores
+-----------------------
+
+La sobrecarga de operadores es la posibilidad de sobrecargar los operadores de una clase.
+
+```csharp
+class Clase
+{
+    public static Clase operator +(Clase valor1, Clase valor2) {
+        return new Clase();
+    }
+}
+```
 
 
 
