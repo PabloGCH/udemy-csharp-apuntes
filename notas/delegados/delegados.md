@@ -15,6 +15,7 @@ Del handler = DelegateMethod;
 ```
 
 Sirve para pasar métodos como parámetros. (callback)
+
 ```csharp
 public delegate void Del(string msg);
 class Program
@@ -34,6 +35,9 @@ class Program
         callback("The number is: " + (param1 + param2).ToString());
     }
 }
+```
+
+
 
 
 
