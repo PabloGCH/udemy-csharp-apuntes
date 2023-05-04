@@ -37,6 +37,38 @@ byte[] buffer = new byte[ms.Length];
 ms.Read(buffer, 0, buffer.Length); //Lee todo el MemoryStream
 ```
 
+Para leer una linea del MemoryStream se utiliza el metodo ReadLine
+
+```csharp
+string line = ms.ReadLine();
+```
+Para escribir en el MemoryStream se utiliza el metodo Write
+
+```csharp
+byte[] buffer = new byte[ms.Length];
+ms.Write(buffer, 0, buffer.Length); //Escribe todo el MemoryStream
+```
+
+Para escribir una linea en el MemoryStream se utiliza el metodo WriteLine
+
+```csharp
+string line = ms.WriteLine();
+```
+
+El memoryStream se cierra con el metodo Close
+
+```csharp
+ms.Close();
+```
+
+
+
+
+
+
+
+
+
 
 
 
