@@ -178,6 +178,89 @@ var librosMasVendidosDisponibles = libros
     .Select(l => l.Titulo);
 ```
 
+###ORDER BY
+
+La clausula ORDER BY permite ordenar los datos de la consulta.
+
+```csharp
+//USANDO EXPRESIONES LINQ
+List<Libro> libros = Libro.GetLibros();
+list<LibroStats> stats = LibroStats.GetStats();
+
+var librosMasVendidos = from l in libros
+                        join s in stats on l.codigo equals s.codigo
+                        orderby s.ventas descending
+                        select l.Titulo;
+```
+
+```csharp
+//USANDO EXPRESIONES LAMBDA
+List<Libro> libros = Libro.GetLibros();
+list<LibroStats> stats = LibroStats.GetStats();
+
+var librosMasVendidos = libros
+    .Join(stats, l => l.codigo, s => s.codigo, (l, s) => new { l.Titulo, s.ventas })
+    .OrderByDescending(l => l.ventas)
+    .Select(l => l.Titulo);
+```
+
+###SELECT
+
+La clausula SELECT permite seleccionar los datos de la consulta.
+Hay ejemplos de SELECT en las consultas anteriores.
+
+
+###GROUP OrderBy
+
+La clausula GROUP permite agrupar los datos de la consulta.
+
+```csharp
+//USANDO EXPRESIONES LINQ
+List<Libro> libros = Libro.GetLibros();
+
+var librosMasVendidos = from l in libros
+                        group l by l.categoryId into g
+                        select new { CategoryId = g.Key, Books = g };
+
+```
+
+```csharp
+//USANDO EXPRESIONES LAMBDA
+List<Libro> libros = Libro.GetLibros();
+
+var librosMasVendidos = libros
+    .GroupBy(l => l.categoryId)
+    .Select(g => new { CategoryId = g.Key, Books = g });
+```
+
+##OPERADORES
+--------------
+
+###OPERADORES MATEMATICOS
+```csharp
+var count = libros.Count();
+var sum = libros.Sum(l => l.precio);
+var avg = libros.Average(l => l.precio);
+var min = libros.Min(l => l.precio);
+var max = libros.Max(l => l.precio);
+```
+###OPERADORES MIEMBRO
+```csharp
+var toma = libros.Take(10);
+var salta = libros.Skip(10);
+var saltaYtoma = libros.Skip(10).Take(10); //SIRVE PARA PAGINADO
+var primero = libros.First();
+var primeroOdefault = libros.FirstOrDefault();
+var ultimo = libros.Last();
+var single = libros.Single(l => l.codigo == 1);
+
+var any = libros.Any(l => l.precio > 100); //retorna true si hay alguno
+var all = libros.All(l => l.precio > 100); //retorna true si todos cumplen
+var contains = libros.Contains(libro); //retorna true si el libro esta en la lista
+```
+
+
+
 
 
 
